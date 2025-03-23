@@ -27,7 +27,7 @@ return {
 			diagnostics.checkmake,
 			formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
 			formatting.stylua,
-			formatting.shfmt.with({ args = { "-i", "4" } }),
+			formatting.shfmt.with({ args = { "-i", "2" } }),
 			formatting.terraform_fmt,
 			formatting.styler,
 			formatting.nixpkgs_fmt,
