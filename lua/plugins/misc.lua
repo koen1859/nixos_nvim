@@ -1,8 +1,16 @@
 -- Standalone plugins with less than 10 lines of config go here
 return {
 	{
-		-- Tmux & split window navigation
-		"christoomey/vim-tmux-navigator",
+		"swaits/zellij-nav.nvim",
+		lazy = true,
+		event = "VeryLazy",
+		keys = {
+			{ "<c-h>", "<cmd>ZellijNavigateLeftTab<cr>", { silent = true, desc = "navigate left or tab" } },
+			{ "<c-j>", "<cmd>ZellijNavigateDown<cr>", { silent = true, desc = "navigate down" } },
+			{ "<c-k>", "<cmd>ZellijNavigateUp<cr>", { silent = true, desc = "navigate up" } },
+			{ "<c-l>", "<cmd>ZellijNavigateRightTab<cr>", { silent = true, desc = "navigate right or tab" } },
+		},
+		opts = {},
 	},
 	-- {
 	-- Detect tabstop and shiftwidth automatically
@@ -40,11 +48,5 @@ return {
 		config = function()
 			require("colorizer").setup()
 		end,
-	},
-	{
-		"nvzone/typr",
-		dependencies = "nvzone/volt",
-		opts = {},
-		cmd = { "Typr", "TyprStats" },
 	},
 }
